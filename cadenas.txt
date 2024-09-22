@@ -1,0 +1,594 @@
+Python: ejercicio donde en una palbra que tenga una vocal se aumenta una p seguida de la mismas
+ voval 
+n=int(input())
+while(n>0):
+     a=input()
+     c=''
+     for carácter in a:
+         if carácter in['a','e' ,'i' ,'o', 'u']:
+                  c+=caracter+'p'+carácter
+                  else:
+                       c+=carácter
+    
+
+     print(c)
+     n=n-1
+en java :
+package ejercicios;
+import java.util.*;
+public class aumentarpybocalenunacadenadespuesdeunavocal {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Leer el número de casos
+        int n = scanner.nextInt();
+        scanner.nextLine(); // Limpiar el buffer
+
+        while (n > 0) {
+            // Leer la palabra
+            String a = scanner.nextLine();
+            String c = ""; // Cadena para almacenar el resultado
+
+            // Procesar cada carácter de la cadena
+            for (int i = 0; i < a.length(); i++) {
+                char carácter = a.charAt(i); // Obtener el carácter en la posición i
+
+                // Verificar si el carácter es una vocal
+                if (carácter == 'a' || carácter == 'e' || carácter == 'i' || carácter == 'o' || carácter == 'u') {
+                    // Concatenar el carácter seguido de 'p' y el mismo carácter
+                    c += carácter + "p" + carácter;
+                } else {
+                    // Concatenar el carácter tal cual
+                    c += carácter;
+                }
+            }
+
+            // Mostrar el resultado
+            System.out.println(c);
+
+            n--;
+        }
+
+        scanner.close();
+    }
+
+}
+
+manejo de integer en java nueros grandes :
+package ejercicios;
+import java.util.*;
+import java.math.BigInteger;
+public class manejodeINTEGER {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario que ingrese dos números grandes
+        System.out.print("Ingrese el primer número grande: ");
+        BigInteger number1 = new BigInteger(scanner.nextLine());
+
+        System.out.print("Ingrese el segundo número grande: ");
+        BigInteger number2 = new BigInteger(scanner.nextLine());
+
+        // Realizar operaciones básicas
+        BigInteger sum = number1.add(number2);
+        System.out.println("Suma: " + sum);
+
+        BigInteger product = number1.multiply(number2);
+        System.out.println("Producto: " + product);
+
+        BigInteger power = number1.pow(10); // Elevar al exponente 10
+        System.out.println("Potencia (número1^10): " + power);
+
+        // Comparar dos BigInteger
+        int comparison = number1.compareTo(number2);
+        if (comparison > 0) {
+            System.out.println("El primer número es mayor que el segundo.");
+        } else if (comparison < 0) {
+            System.out.println("El primer número es menor que el segundo.");
+        } else {
+            System.out.println("El primer número es igual al segundo.");
+        }
+
+        scanner.close();
+    }
+}
+
+números primos en un vector
+mport java.util.Scanner;
+
+public class PrimeNumbersFinder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar el tamaño del vector
+        System.out.print("Ingrese el tamaño del vector: ");
+        int size = scanner.nextInt();
+
+        // Crear el vector con el tamaño ingresado
+        int[] numbers = new int[size];
+
+        // Solicitar los valores del vector al usuario
+        System.out.println("Ingrese los " + size + " números del vector:");
+        for (int i = 0; i < size; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+
+        // Encontrar y mostrar los números primos
+        System.out.println("Números primos en el vector:");
+        for (int number : numbers) {
+            if (number <= 1) {
+                continue; // Los números menores o iguales a 1 no son primos
+            }
+
+            int divisorCount = 0; // Contador de divisores
+
+            // Contar los divisores del número
+            for (int i = 1; i <= number; i++) {
+                if (number % i == 0) {
+                    divisorCount++;
+                }
+            }
+
+            // Un número primo debe tener exactamente dos divisores (1 y el mismo número)
+            if (divisorCount == 2) {
+                System.out.println(number);
+            }
+        }
+
+        scanner.close();
+    }
+}
+matriz
+import java.util.Scanner;
+
+public class PrimeMatrixFinder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar las dimensiones de la matriz
+        System.out.print("Ingrese el número de filas de la matriz: ");
+        int rows = scanner.nextInt();
+        System.out.print("Ingrese el número de columnas de la matriz: ");
+        int cols = scanner.nextInt();
+
+        // Crear la matriz con las dimensiones ingresadas
+        int[][] matrix = new int[rows][cols];
+
+        // Solicitar los valores de la matriz al usuario
+        System.out.println("Ingrese los " + (rows * cols) + " números de la matriz:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Encontrar y mostrar los números primos en la matriz
+        System.out.println("Números primos en la matriz:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                int number = matrix[i][j];
+                if (number <= 1) {
+                    continue; // Los números menores o iguales a 1 no son primos
+                }
+
+                int divisorCount = 0; // Contador de divisores
+
+                // Contar los divisores del número
+                for (int k = 1; k <= number; k++) {
+                    if (number % k == 0) {
+                        divisorCount++;
+                    }
+                }
+
+                // Un número primo debe tener exactamente dos divisores (1 y el mismo número)
+                if (divisorCount == 2) {
+                    System.out.println("Número primo encontrado: " + number);
+                }
+            }
+        }
+
+        scanner.close();
+    }
+}
+*******************************metodo burbuja*************************
+import java.util.*;
+public class bur {
+
+	public static void main(String[] args) {
+		Scanner t=new Scanner(System.in);
+		int n,po,aux;
+		System.out.print("dijite dimencion");
+		n=t.nextInt();
+		int Inser[]=new int[n];
+		System.out.println("dijite elementos del vector");
+		for(int i=0;i<n;i++) {
+			System.out.print((i+1)+"dijite un numero");
+			Inser[i]=t.nextInt();
+			
+		}
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<n-1;j++) {
+				if(Inser[j]>Inser[j+1]) {
+				aux=Inser[j];
+				Inser[j]=Inser[j+1];
+				Inser[j+1]=aux;
+			}
+				}
+			
+		}
+		System.out.print(" decendente");
+		for(int i=n-1;i>=0;i--) {
+			System.out.print(Inser[i]+" ");
+		}
+		System.out.println();
+		System.out.print("asendente");
+		for(int i=0;i<n;i++) {
+			System.out.print(Inser[i]+" ");
+		}
+		System.out.println();
+
+	}
+
+}
+*********************busqueda secuencial************************************************
+import java .util.*;
+public class secu {
+
+	public static void main(String[] args) {
+		Scanner t=new Scanner(System.in);
+		int numeroAB ,din;
+		System.out.print("dijitr numero a buscar");
+		numeroAB=t.nextInt();
+		System.out.print(" dijite la dimencio");
+		din=t.nextInt();
+		int A[]=new int[din];
+		System.out.print(" dijite elementos del vector");
+		 for(int i=0;i<din;i++) {
+			 A[i]=t.nextInt();
+			 
+					
+		 
+		 }
+		 /*metodo secuencial*/
+		 for(int x=0;x<din;x++) {
+			 if(A[x]==numeroAB) {
+				System.out.print("el numero esta en la posicion  "+x);
+				}
+			}
+
+	}
+
+}
+estructuras
+********************lista simple*************************
+import java.util.Scanner;
+
+class NodoLS
+{
+	int info;
+	NodoLS sgte;
+	NodoLS()
+	{
+		sgte=null;
+	}
+}
+
+public  class listaSimple {
+	static NodoLS ListaS=new NodoLS();
+	
+
+	public listaSimple() 
+	{
+		ListaS=null;
+		
+	}
+	public void InsertarIni(int dato)
+	{
+		NodoLS nn=new NodoLS();
+		nn.info=dato;
+		nn.sgte=ListaS;
+		ListaS=nn;
+		
+		
+	}
+	public int LeerDato()
+	{
+		Scanner tecla=new Scanner(System.in);
+		int dato=tecla.nextInt();
+		return dato;
+	}
+	
+	public void InsertarFin(int dato)
+	{
+		NodoLS nn=new NodoLS();
+		nn.info=dato;
+		if(ListaS==null)
+			ListaS=nn;
+		else {
+			NodoLS aux=ListaS;
+			while(aux.sgte!=null)
+				aux=aux.sgte;
+			aux.sgte=nn;
+		}
+		
+	}		
+		
+	public void InsertarDN(int enesimo, int dato)
+	{
+		NodoLS nn=new NodoLS();
+		nn.info=dato;
+		if(ListaS==null)
+			ListaS=nn;
+		else
+		{
+			int cont=ContarN();
+			if(enesimo<=cont-1)
+			{
+				int c=1;
+				NodoLS aux=ListaS;
+				while(c!=enesimo)
+				{
+					aux=aux.sgte;
+					aux.sgte=nn;
+				}
+				nn.sgte=aux.sgte;
+				aux.sgte=nn;
+			}
+			else
+				System.out.println("Error.... no existe  ");
+		}
+	}
+	public void InsertarDNI(int X, int dato)
+	{
+		NodoLS nn=new NodoLS();
+		nn.info=dato;
+		int b=0;
+		NodoLS aux=ListaS;
+		if(ListaS==null)
+			ListaS=nn;
+		else
+		{
+			while(aux!=null)
+			{
+				if(aux.info!=X)
+					aux=aux.sgte;
+				else
+				{
+					nn.sgte=aux.sgte;
+					aux.sgte=nn;
+					b=1;
+					aux=null;
+				}
+			}
+			if(b==0)
+				System.out.print("No existe informacion !! X");
+		}
+	}
+	
+	public void Imprimir()
+	{
+		if(ListaS==null)
+			System.out.print("LISTA VACIA!!");
+		else
+		{
+			NodoLS aux=ListaS;
+			while(aux!=null)
+			{
+				System.out.println(" "+ aux.info+" ");
+				aux=aux.sgte;
+			}
+		}
+	}
+	public void EliminarPrim()
+	{
+		if(ListaS==null)
+			System.out.print("Lista vacia");
+		else
+		{
+			System.out.print("Elemento eliminado: "+ ListaS.info);
+			ListaS=ListaS.sgte;
+		}
+	}
+		
+	
+	public void EliminarUlt()
+	{
+		if(ListaS==null)
+			System.out.print("Lista Vacia");
+		else {
+			if(ListaS.sgte==null)
+				ListaS=null;
+			else {
+				NodoLS aux=ListaS;
+				while(aux.sgte.sgte!=null)
+					aux=aux.sgte;
+				
+				System.out.print("Elemento eliminado : "+ aux.sgte.info);
+				aux.sgte=null;
+				}
+			}
+			
+	}
+	public void EliminarEN(int enesimo)
+	{
+		int cont=ContarN();
+		if(enesimo<=cont)
+		{
+			int c=1;
+			NodoLS aux1=ListaS;
+			NodoLS aux2=ListaS;
+			
+			while(c!=enesimo)
+			{
+				c++;
+				aux2=aux1;
+				aux1=aux1.sgte;
+				
+			}
+			System.out.print("Nodo Eliminado tiene informacion "+aux1.info);
+			aux2.sgte=aux1.sgte;
+		}
+		else System.out.print("error.... no existe ");	
+	}
+	public void EliminarNINF(int X)
+	{
+			int b=0;
+			NodoLS aux1=ListaS;
+			NodoLS aux2=ListaS;
+			
+			while(aux1!=null)
+			{
+				if(X!=aux1.info)
+				{
+				aux2=aux1;
+				aux1=aux1.sgte;
+				}
+				else
+				{
+					aux2.sgte=aux1.sgte;
+					aux1=aux2.sgte;
+					b=1;
+				}	
+			}	
+			if(b==0)
+				System.out.print("error.... no existe ");
+		}
+			
+
+	public int ContarN()
+	{
+		if(ListaS==null)
+			return -1;
+		else
+		{
+			NodoLS aux=ListaS;
+			int cont=0;
+			while(aux!=null)
+			{
+				cont++;
+				aux=aux.sgte;
+			}
+			return cont;
+		}
+	}
+	public void ordenarA() {
+		int c1=0;   
+		if (ListaS==null) {
+			System.out.print("lista vacia");
+		}
+		else {
+			NodoLS aux=ListaS;
+			while(aux!=null) {
+								
+			}
+		}
+	}
+	public void sumaIP(){
+	int c;  int c1;
+		if (ListaS==null) {
+			System.out.print("lista vacia");
+		}else
+		{NodoLS aux=ListaS;
+			while(aux!=null) {
+			
+			if(aux.info%2==0) {
+				c=aux.info+aux.sgte.info;
+				aux=aux.sgte;
+				System.out.print("pares :"+c);
+				
+			}else
+			{
+				c1=aux.info+aux.sgte.info;
+				aux=aux.sgte;
+				System.out.print(" impares:"+c1);
+			}
+
+		}
+			}
+	}
+	public static void main(String[] args)
+	{
+		int op;
+		listaSimple ls=new listaSimple();
+		do {
+			System.out.println("1.INSERTAR AL INICIO");
+			System.out.println("2.INSERTAR AL FINAL");
+			System.out.println("3.INSERTAR DE UN N-ESIMO NODO");
+			System.out.println("4.INSERTAR CAMPO ");
+			System.out.println("5.ELIMINAR EL PRIMERO");
+			System.out.println("6.ELIMINAR EL ULTIMO");
+			System.out.println("7.ELIMINAR N-ESIMO NODO");
+			System.out.println("8.ELIMINAR SEGUN CAMPO INFORMACION");
+			System.out.println("9.IMPRIMIR");
+			System.out.println("10. suma de pares e impares ");
+			System.out.println("11. ELIMINACION SEGUN SU POSICION");
+			System.out.println("12. ORDENAR");
+			System.out.println("13.TERMINAR");
+			System.out.println("14.ELIJA UNA OPCION");
+			op=ls.LeerDato();
+			switch(op)
+			{
+			case 1:System.out.println("Digite un dato de Tipo entero");
+				int dato=ls.LeerDato();
+				ls.InsertarIni(dato);
+				break;
+			case 2:System.out.println("Digite un dato de Tipo entero");
+				dato=ls.LeerDato();
+				ls.InsertarFin(dato);
+				break;
+			case 3:if(ListaS==null)
+						System.out.print("LIsta vacia");
+					else
+					{
+						System.out.print("digite un dato de tipo entero");
+					}
+				dato=ls.LeerDato();
+				System.out.print("Digite el E-nesimo nodo");
+				int enesimo=ls.LeerDato();
+				ls.InsertarDN(enesimo,dato);
+				break;
+			case 4:if(ListaS==null)
+						System.out.print("Lista vacia");
+					else
+					{
+						System.out.print("digite un dato de tipo entero");
+					}
+				dato=ls.LeerDato();
+				System.out.print("Digite el campo X");
+				int X=ls.LeerDato();
+				ls.InsertarDNI(X,dato);
+				break;
+			
+			case 5: ls.EliminarPrim();
+				break;
+			case 6: ls.EliminarUlt();
+				break;
+			case 7:System.out.print("Digite N-ESIMO nodo a eliminar"); 
+				enesimo=ls.LeerDato();
+				ls.EliminarEN(enesimo);
+				
+				break;
+			case 8:System.out.print("Digite el campo dato a eliminar"); 
+				X=ls.LeerDato();
+				ls.EliminarNINF(X);
+				break;
+				
+			case 9:System.out.println("INFORMACION DE LA LISTA");
+				ls.Imprimir();
+				break;
+			case 10:System.out.println("suma  de pares e impares es ");
+			ls.sumaIP();
+			break;
+			case 11:System.out.println("elinar segun su posicion");
+			break;
+			case 12:System.out.println("odenado de manera acendente");
+			ls.ordenarA();
+			case 13:System.exit(0);
+			default: System.out.println("Error NO existe la opcion");
+			
+			}
+		}while(op!=14);
+	}
+
+}
+
